@@ -1,3 +1,5 @@
+
+    
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -8,39 +10,30 @@
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	
 </head>
 
 
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		 <a class="navbar-brand" href="index.html">Home</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				 <span class="navbar-toggler-icon"></span>
-			 </button>
-				 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						 <li class="nav-item active">
-							 <a class="nav-link" href="apply.html">Plan your trip<span class="sr-only">(current)</span></a>
-						 </li>
-							<li class="nav-item">
-								 <a class="nav-link" href="top.html">Top Picks</a>
-							 </li>
-				
-					  </ul>
-		
-			     </div>
-	</nav>
-
+<div class="nav-right visible-xs">
+  <div class="button" id="btn">
+    <div class="bar top"></div>
+    <div class="bar middle"></div>
+    <div class="bar bottom"></div>
+  </div>
+</div>
+<!-- nav-right -->
+<main>
 
 <div class='parallax'>
-
-	<br>
+<br>
 
 		<div class="jumbotron jumbotron-fluid" id="transpHeader">
 	
 			<div class="container">
-				<img src="logomav.png" class="rounded float-right" alt="..." id="transpHeader">
+				
 
 				 <h1 class="display-4">Make A Vacation</h1>
 					 <p class="lead">The vacation of your dreams is at your fingertips.</p>
@@ -51,9 +44,59 @@
 
 </div>
 <br>
+  <nav>
+    <div class="nav-right hidden-xs">
+      <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+      </div>
+    </div>
+    <!-- nav-right -->
+  </nav>
+
+ 
+</main>
+
+<div class="sidebar">
+  <ul class="sidebar-list">
+    <li class="sidebar-item"><a href="apply.html" class="sidebar-anchor">Apply Now</a></li>
+    <li class="sidebar-item"><a href="top.html" class="sidebar-anchor">enter text</a></li>
+    <li class="sidebar-item"><a href="results.html" class="sidebar-anchor">Your results</a></li>
+    <li class="sidebar-item"><a href="index.html" class="sidebar-anchor">Home</a></li>
+  </ul>
+</div>
+
+
+
+
+	
 
 </div>
 
 
 </body>
+<script>
+$(document).ready(function() {
+
+  function toggleSidebar() {
+    $(".button").toggleClass("active");
+    $("main").toggleClass("move-to-left");
+    $(".sidebar-item").toggleClass("active");
+  }
+
+  $(".button").on("click tap", function() {
+    toggleSidebar();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      toggleSidebar();
+    }
+  });
+
+});
+</script>
+   
+
 </html>
